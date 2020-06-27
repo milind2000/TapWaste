@@ -17,7 +17,6 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/404" component={NoMatchPage} />
           <Redirect to="/404" />

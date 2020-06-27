@@ -11,7 +11,7 @@ const navigationBar = () => (
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto">
       <Nav.Link href="/">Home</Nav.Link>
-	  <Nav.Link href="#">Our Services</Nav.Link>
+	  <Nav.Link href="/#myRow">Our Services</Nav.Link>
 	  <Nav.Link href="#link2">Add to Cart</Nav.Link>
 	  <Nav.Link href="#link3">Orders</Nav.Link>
 	  <Nav.Link href="/contact">Contact Us</Nav.Link>
