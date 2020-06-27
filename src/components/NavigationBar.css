@@ -1,0 +1,61 @@
+.navbar{
+    padding: 0px;
+}
+
+.navbar-light .navbar-brand{
+    font-family: 'Catamaran', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+	color: #79d70f;
+	text-decoration: none;
+    margin-left: 1%;
+    padding-bottom: 0px;
+}
+
+.navbar-light .navbar-brand:hover{
+    font-family: 'Catamaran', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+	color: #79d70f;
+	text-decoration: none;
+    margin-left: 1%;
+    padding-bottom: 0px;
+}
+
+.navbar-light .navbar-nav .nav-link{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	color: #3498db;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	color: #3498db;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: 1s;
+  }
+  .navbar-light .navbar-nav .nav-link::after {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 3px;
+	top: 100%;
+	left: 0;
+	background: #79d70f;
+	transition: transform 0.5s;
+	transform: scaleX(0);
+	transform-origin: right;
+  }
+    .navbar-light .navbar-nav .nav-link:hover {
+	color: black;
+  }
+  .navbar-light .navbar-nav .nav-link:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+  }

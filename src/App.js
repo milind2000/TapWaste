@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'; 
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import Layout from './components/Layout';
 import NavigationBar from './components/NavigationBar';
 
 //pages
@@ -15,17 +14,15 @@ function App() {
   return (
     <>
       <NavigationBar />
-      <Layout>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/contact" component={ContactPage} />
-            <Route path="/404" component={NoMatchPage} />
-            <Redirect to="/404" />
-          </Switch>
-        </Router>
-      </Layout>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/404" component={NoMatchPage} />
+          <Redirect to="/404" />
+        </Switch>
+      </Router>
     </>
   );
 }

@@ -7,6 +7,4 @@ const Layout = (props) => (
     </Container>
 );
 
-
- 
 export default Layout;
