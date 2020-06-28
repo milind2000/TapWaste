@@ -14,7 +14,7 @@ import RegisterPage from './Pages/Register';
 function App() {
   return (
     <>
-      
+      <NavigationBar/>
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
