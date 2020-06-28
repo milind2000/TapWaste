@@ -14,7 +14,7 @@ const homePage = () => (
     <div>
         <Jumbotron />
         <Container>
-            <Row id="myRow" className="d-flex justify-content-center">
+            <Row id="myServicesRow" className="d-flex justify-content-center">
                 <h2 className={classes.serviceHead}>REDUCE, SEGREGATE, & RECYCLE</h2>
             </Row>
 

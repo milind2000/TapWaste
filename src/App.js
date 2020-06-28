@@ -5,8 +5,9 @@ import NavigationBar from './components/NavigationBar';
 
 //pages
 import HomePage from './Pages/Home';
-import ContactPage from './Pages/Contact';
+import LoginPage from './Pages/Login';
 import AboutPage from './Pages/About';
+import ContactPage from './Pages/Contact';
 import NoMatchPage from './Pages/404';
 
 
@@ -18,6 +19,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/about" component={AboutPage} />
           <Route path="/404" component={NoMatchPage} />
           <Redirect to="/404" />
         </Switch>
