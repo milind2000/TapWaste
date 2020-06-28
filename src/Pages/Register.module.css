@@ -1,35 +1,104 @@
-section.registerContainer{
-       padding: 1rem;
-    height: 100%;
-    width: 26%;
-    background: rgb(139,223,104);
-    background: linear-gradient(0deg, rgba(139,223,104,1) 31%, rgba(45,130,253,1) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.body1{
+    margin: 0;
+    padding: 0;
+}
+.body1:before{
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../assets/images/cans-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+.contactForm
+{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    width: 500px;
+    height: 850px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.6);
 }
 
-.textToRegister {
-    margin-top: 20px;
+.contactForm h2 {
+    margin: 0;
+    padding: 0 0 20px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.contactForm .paraLabel
+{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+}
+
+.contactForm p
+{
+    margin: 10px;
+    padding: 0;
+    /* font-weight: bold; */
+    color: aqua;
+}
+
+.contactForm input
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.contactForm input[type="email"],
+.contactForm input[type="text"],
+.contactForm input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.contactForm input[type="submit"] {
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    background: red;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    margin-top: 1%;
+}
+.contactForm a
+{
+    color:yellow;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {
-    section.registerContainer{
+    .contactForm{
+        margin-top: 20px;
+        transform: translate(-50%,-47%);
+        width: 500px;
+        height: 850px;
+        padding: 80px 40px;
+        box-sizing: border-box;
+        background: rgba(0,0,0,.6);
         width: 100%;
-        height: 100%;
-        background: rgb(139,223,104);
-        background: linear-gradient(0deg, rgba(139,223,104,1) 31%, rgba(45,130,253,1) 100%);
- }
-}
-
-.registerForm{
-    color:black;
-    font-weight:bold;
-    font-family:'Roboto',sans-serif;;
-}
-
-input:focus { 
-    outline:none;
-    border-color:#9ecaed;
-    box-shadow:0 0 10px #9ecaed;
+    }
 }

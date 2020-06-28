@@ -51,5 +51,18 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <a href="#" class="to-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+    <script>
+      const ToTop = document.querySelector(".to-top");
+      window.addEventListener('scroll', () => {
+        if(window.pageYOffset > 100) {
+          ToTop.classList.add("active");
+        } else {
+          ToTop.classList.remove("active");
+        }
+      })
+    </script>
   </body>
 </html>

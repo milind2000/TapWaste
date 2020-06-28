@@ -15,7 +15,6 @@ const navigationBar = () => (
       <Nav.Link href="../Pages/Login.js">Add to Cart</Nav.Link>
     <Nav.Link href="#services">Our Services</Nav.Link>
 	  <Nav.Link href="#link3">Orders</Nav.Link>
-	  <Nav.Link href="#link4">Contact Us</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>

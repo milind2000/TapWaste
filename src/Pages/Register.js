@@ -1,60 +1,52 @@
 import React from 'react';
-import { Form, Button, Jumbotron as Jumbo } from 'react-bootstrap';
-import styled from 'styled-components';
 import classes from './Register.module.css';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-const Styles = styled.div`
-    .jumbo {
-			  padding: 0;
-                display: flex;
-				align-items: center;
-				justify-content: center;
-                position: relative;
-                margin-bottom:0px;
-                background: rgb(139,223,104);
-                background: linear-gradient(0deg, rgba(139,223,104,1) 31%, rgba(45,130,253,1) 100%);
-		}
-`;
-
-const registerPage = () => (
-	<Styles>
-		<Jumbo fluid className="jumbo">
-			<section className={classes.registerContainer}>
-				<Form className={classes.registerForm}>
+const samplePage = () => {
+    return (
+            <div className={classes.body1}>
+                <div className={classes.contactForm}>
+                    <h2>Register</h2>
+                    <Form className={classes.registerForm}>
                 <Form.Group controlId="formName">
-						<Form.Label>Name</Form.Label>
+						<Form.Label className={classes.paraLabel}>Name</Form.Label>
 						<Form.Control type="text" placeholder="Enter your Name" className="form-control form-control-sm" />
 					</Form.Group>
 
                     <Form.Group controlId="formUsername">
-						<Form.Label>Mobile Number</Form.Label>
+						<Form.Label className={classes.paraLabel}>Mobile Number</Form.Label>
 						<Form.Control type="text" placeholder="Enter your mobile number" className="form-control form-control-sm"/>
 					</Form.Group>
 
 					<Form.Group controlId="formUsername">
-						<Form.Label>Username</Form.Label>
+						<Form.Label className={classes.paraLabel}>Username</Form.Label>
 						<Form.Control type="text" placeholder="Username" className="form-control form-control-sm"/>
 					</Form.Group>
 
                     <Form.Group controlId="formPassword">
-						<Form.Label>Password</Form.Label>
+						<Form.Label className={classes.paraLabel}>Password</Form.Label>
 						<Form.Control type="password" placeholder="Set your Password" className="form-control form-control-sm" />
 					</Form.Group>
 
                     <Form.Group controlId="formConfirmPassword">
-						<Form.Label>Confirm Password</Form.Label>
+						<Form.Label className={classes.paraLabel}>Confirm Password</Form.Label>
 						<Form.Control type="password" placeholder="Password" className="form-control form-control-sm" />
 					</Form.Group>
 
                     <Form.Group controlId="exampleForm.ControlSelect1">
-                        <Form.Label>Select your City</Form.Label>
+                        <Form.Label className={classes.paraLabel}>Select your City</Form.Label>
                          <Form.Control as="select" className="form-control form-control-sm">
-                           <option>Indore</option>
+                            <option>Indore</option>
+                            <option>Bhopal</option>
+                            <option>Delhi</option>
+                            <option>Bengluru</option>
+                            <option>Chennai</option>
                         </Form.Control>
                             </Form.Group>
 
                             <Form.Group controlId="formBasicEmail">
-                                <Form.Label>Email address</Form.Label>
+                                <Form.Label className={classes.paraLabel}>Email address</Form.Label>
                                 <Form.Control type="email" placeholder="Enter email" className="form-control form-control-sm" />
                                 <Form.Text className="text-muted">
                                   <b>We'll never share your email with anyone else.</b>
@@ -65,11 +57,12 @@ const registerPage = () => (
 						Register
                     </Button>
 				</Form>
+                    <div>
+                        <p>Already a user? <a href="/login">Login Now</a></p>
+                    </div>
+                </div>
+            </div>
+    );
+}
 
-			</section>
-		</Jumbo>
-	</Styles>
-
-);
-
-export default registerPage;
+export default samplePage;

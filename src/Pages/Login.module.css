@@ -1,24 +1,102 @@
-section.loginContainer{
-    background-color: rgba(0,0,0, 0.8);
-    padding: 1rem;
-    height: 60%;
-    width: 26%;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.body1{
+    margin: 0;
+    padding: 0;
+}
+.body1:before{
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../assets/images/cans-background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+.contactForm
+{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 500px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+}
+.avatar {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-80px/2);
+    left: calc(50% - 40px);
+}
+.contactForm h2 {
+    margin: 0;
+    padding: 0 0 20px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+.contactForm p
+{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+}
+.contactForm input
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.contactForm input[type="text"],
+.contactForm input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.contactForm input[type="submit"] {
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    background: red;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    margin-top: 1%;
+}
+.contactForm a
+{
+    color:yellow;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+input[type="checkbox"] {
+    width: 5%;
 }
 
-section.loginForm {
-    color: white;
-}
-
-.textToRegister {
-    margin-top: 20px;
+.checkboxText {
+    color: grey;
 }
 
 @media (max-width: 768px) {
-    section.loginContainer{
+    .contactForm{
         width: 100%;
         height: 100%;
     }

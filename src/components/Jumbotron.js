@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron as Jumbo, Container } from 'react-bootstrap';
+import { Button,Jumbotron as Jumbo, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import CansBackground from '../assets/images/cans-background.jpg';
 
@@ -40,23 +40,25 @@ const Styles = styled.div`
         z-index: 0;
         opacity: 1;
         text-align: center;
-        font-size: 8vw;
+        font-size: 2rem;
         color: #efefef;
-        font-family: 'Piedra', cursive;
+        font-family: 'Roboto', sans-serif;
+        padding: 0 4rem;
     }
-`;
+    
+ `;
 
 const Jumbotron = () => (
     <Styles>
         <Jumbo fluid className="jumbo">
-            <div className="overlay"></div>
+            <div className="overlay">
+            </div>
             <Container>
-                <h1 className="text-header">Welcome</h1>
-                <p className="text-header-para">Sell Your Trash in a fly!</p>
-            </Container>
+                <h3 className="text-header">Welcome</h3>
+                <p className="text-header-para">Sell Your Trash in a fly and contribute towards proper waste managment in our country.</p>
+             </Container>
         </Jumbo>
     </Styles>
 );
-
 
 export default Jumbotron;
