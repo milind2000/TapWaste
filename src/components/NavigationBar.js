@@ -6,7 +6,7 @@ import './NavigationBar.css';
 
 const navigationBar = () => (
   <Navbar bg="light" expand="lg" sticky="top">
-    <Navbar.Brand href="#home">Kachra Seth</Navbar.Brand>
+    <Navbar.Brand href="/">Kachra Seth</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
