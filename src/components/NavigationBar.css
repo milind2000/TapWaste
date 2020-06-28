@@ -22,13 +22,6 @@
     padding-bottom: 0px;
 }
 
-.navbar-light .navbar-nav .nav-link{
-	font-family: 'Roboto', sans-serif;
-	font-size: 1rem;
-	font-weight: bold;
-	color: #3498db;
-}
-
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Roboto', sans-serif;
 	font-size: 1rem;
@@ -39,6 +32,8 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	transition: 1s;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
   }
   .navbar-light .navbar-nav .nav-link::after {
 	position: absolute;
