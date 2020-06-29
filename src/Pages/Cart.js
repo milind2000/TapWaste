@@ -24,7 +24,7 @@ const PRODUCT_PRICES = {
     cardboard: 8,
     books: 5,
     plastic: 7,
-    aluminium: 10,
+    aluminium: 50,
     ac: 1000,
     fridge: 500,
     washingmachine: 700,
@@ -244,7 +244,7 @@ class CartPage extends Component {
                         <h1>Estimated Price is: ₹ {this.state.estimatedPrice}</h1>
                     </div>
 
-                    <div className="col text-center">
+                    <div className="col text-center mb-4">
                         <Button href="#" variant="success" size="lg">Place Order</Button>
                     </div>
 
