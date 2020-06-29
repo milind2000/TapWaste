@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import './ProductControl.module.css';
 
 const productControl = (props) => {
     return ( 
-        <div>
-        <button onClick={props.productRemoved} disabled={props.disabled}>Less</button>
-        <p>{props.number}</p>
-        <button onClick={props.productAdded}>More</button>
+        <div className="container">
+            <h2> {props.number}</h2>
+        <button onClick={props.productRemoved} disabled={props.disabled}>-</button>
+        <button onClick={props.productAdded}>+</button>
     </div>   
      );
 }

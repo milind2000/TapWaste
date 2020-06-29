@@ -8,7 +8,7 @@ import HomePage from './Pages/Home';
 import LoginPage from './Pages/Login';
 import RegisterPage from './Pages/Register';
 import AboutPage from './Pages/About';
-import KkartPage from './Pages/Kkart';
+import CartPage from './Pages/Cart';
 import NoMatchPage from './Pages/404';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/kkart" component={KkartPage} />
+          <Route path="/cart" component={CartPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/register" component={RegisterPage} />          
           <Route path="/about" component={AboutPage} />
