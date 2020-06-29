@@ -1,0 +1,21 @@
+.head{
+    font-family: 'Catarman',sans-serif;
+    font-weight: bold;
+    font-size: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    
+}
+
+.itemHead{
+    font-family: 'Roboto',sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    
+}
+
+img {
+        height: 7rem;
+        width: 7rem;  
+    }

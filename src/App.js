@@ -10,6 +10,7 @@ import AboutPage from './Pages/About';
 import NoMatchPage from './Pages/404';
 import LoginPage from './Pages/Login';
 import RegisterPage from './Pages/Register';
+import CartPage from './Pages/Cart';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" component={ContactPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/register" component={RegisterPage}/>
+          <Route path="/cart" component={CartPage}/>
           <Route path="/404" component={NoMatchPage} />
           <Redirect to="/404" />
         </Switch>
