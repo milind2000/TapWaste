@@ -98,6 +98,12 @@ class CartPage extends Component {
     }
 
     render() {
+        const disableInfo = {
+            ...this.state.products
+        };
+        for (let key in disableInfo) {
+            disableInfo[key] = disableInfo[key] <= 0;
+        }
         return (
 
             <div>
@@ -113,6 +119,7 @@ class CartPage extends Component {
                             <h5>(in kg)</h5>
                             <Image src={NewsImg} />
                             <ProductControl
+                                disabled={disableInfo["paper"]}
                                 number={this.state.products.paper}
                                 productAdded={() => this.addProductHandler(productTypes.paper)}
                                 productRemoved={() => this.removeProductHandler(productTypes.paper)}
@@ -124,6 +131,7 @@ class CartPage extends Component {
                             <h5>(in kg)</h5>
                             <Image src={BoxImg} />
                             <ProductControl
+                                disabled={disableInfo["cardboard"]}
                                 number={this.state.products.cardboard}
                                 productAdded={() => this.addProductHandler(productTypes.cardboard)}
                                 productRemoved={() => this.removeProductHandler(productTypes.cardboard)}
@@ -135,6 +143,7 @@ class CartPage extends Component {
                             <h5>(in kg)</h5>
                             <Image src={BookImg} />
                             <ProductControl
+                                disabled={disableInfo["books"]}
                                 number={this.state.products.books}
                                 productAdded={() => this.addProductHandler(productTypes.books)}
                                 productRemoved={() => this.removeProductHandler(productTypes.books)}
@@ -146,6 +155,7 @@ class CartPage extends Component {
                             <h5>(in kg)</h5>
                             <Image src={PlasticImg} />
                             <ProductControl
+                                disabled={disableInfo["plastic"]}
                                 number={this.state.products.plastic}
                                 productAdded={() => this.addProductHandler(productTypes.plastic)}
                                 productRemoved={() => this.removeProductHandler(productTypes.plastic)}
@@ -157,6 +167,7 @@ class CartPage extends Component {
                             <h5>(in kg)</h5>
                             <Image src={AluImg} />
                             <ProductControl
+                                disabled={disableInfo["aluminium"]}
                                 number={this.state.products.aluminium}
                                 productAdded={() => this.addProductHandler(productTypes.aluminium)}
                                 productRemoved={() => this.removeProductHandler(productTypes.aluminium)}
@@ -168,6 +179,7 @@ class CartPage extends Component {
                             <h5>(in units)</h5>
                             <Image src={AcImg} />
                             <ProductControl
+                                disabled={disableInfo["ac"]}
                                 number={this.state.products.ac}
                                 productAdded={() => this.addProductHandler(productTypes.ac)}
                                 productRemoved={() => this.removeProductHandler(productTypes.ac)}
@@ -179,6 +191,7 @@ class CartPage extends Component {
                             <h5>(in units)</h5>
                             <Image src={FridgeImg} />
                             <ProductControl
+                                disabled={disableInfo["fridge"]}
                                 number={this.state.products.fridge}
                                 productAdded={() => this.addProductHandler(productTypes.fridge)}
                                 productRemoved={() => this.removeProductHandler(productTypes.fridge)}
@@ -190,6 +203,7 @@ class CartPage extends Component {
                             <h5>(in units)</h5>
                             <Image src={WashingImg} />
                             <ProductControl
+                                disabled={disableInfo["washingmachine"]}
                                 number={this.state.products.washingmachine}
                                 productAdded={() => this.addProductHandler(productTypes.washingmachine)}
                                 productRemoved={() => this.removeProductHandler(productTypes.washingmachine)}
@@ -201,6 +215,7 @@ class CartPage extends Component {
                             <h5>(in units)</h5>
                             <Image src={BatteryImg} />
                             <ProductControl
+                                disabled={disableInfo["battery"]}
                                 number={this.state.products.battery}
                                 productAdded={() => this.addProductHandler(productTypes.battery)}
                                 productRemoved={() => this.removeProductHandler(productTypes.battery)}
@@ -212,6 +227,7 @@ class CartPage extends Component {
                             <h5>(in kg)</h5>
                             <Image src={EwasteImg} />
                             <ProductControl
+                                disabled={disableInfo["ewaste"]}
                                 number={this.state.products.ewaste}
                                 productAdded={() => this.addProductHandler(productTypes.ewaste)}
                                 productRemoved={() => this.removeProductHandler(productTypes.ewaste)}
@@ -223,6 +239,7 @@ class CartPage extends Component {
                             <h5>(in units)</h5>
                             <Image src={CaseImg} />
                             <ProductControl
+                                disabled={disableInfo["cpu"]}
                                 number={this.state.products.cpu}
                                 productAdded={() => this.addProductHandler(productTypes.cpu)}
                                 productRemoved={() => this.removeProductHandler(productTypes.cpu)}
@@ -234,6 +251,7 @@ class CartPage extends Component {
                             <h5>(in units)</h5>
                             <Image src={LcdImg} />
                             <ProductControl
+                                disabled={disableInfo["lcd"]}
                                 number={this.state.products.lcd}
                                 productAdded={() => this.addProductHandler(productTypes.lcd)}
                                 productRemoved={() => this.removeProductHandler(productTypes.lcd)}

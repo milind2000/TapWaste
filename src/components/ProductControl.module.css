@@ -1,4 +1,4 @@
-button {
+.Mybutton1 {
     display: inline-block;
     background-color:  #79d70f;
     border: 0 black;
@@ -12,7 +12,7 @@ button {
     
   }
 
-  button:disabled{
+  .Mybutton1:disabled{
     display: inline-block;
     cursor:not-allowed;
     background-color:  grey;
