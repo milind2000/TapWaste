@@ -17,7 +17,7 @@ const Styles = styled.div`
 
     .overlay {
         background-color: #000;
-        opacity: 0.5;
+        opacity: 0.7;
         position: absolute;
         top: 0;
         left: 0;
@@ -28,7 +28,7 @@ const Styles = styled.div`
     }
 
     .text-header {
-        text-align: left;
+        text-align: center;
         z-index: 0;
         opacity: 1;
         font-size: 5rem;
@@ -46,7 +46,7 @@ const Styles = styled.div`
     }
 
     .container{
-        margin-bottom:200px;
+        margin-bottom:2rem;
     }
 
 `;
