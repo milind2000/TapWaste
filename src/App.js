@@ -5,25 +5,23 @@ import NavigationBar from './components/NavigationBar';
 
 //pages
 import HomePage from './Pages/Home';
-import ContactPage from './Pages/Contact';
-import AboutPage from './Pages/About';
-import NoMatchPage from './Pages/404';
 import LoginPage from './Pages/Login';
 import RegisterPage from './Pages/Register';
+import AboutPage from './Pages/About';
 import CartPage from './Pages/Cart';
+import NoMatchPage from './Pages/404';
 
 function App() {
   return (
     <>
-      <NavigationBar/>
+      <NavigationBar />
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/contact" component={ContactPage} />
+          <Route path="/cart" component={CartPage} />
           <Route path="/login" component={LoginPage} />
-          <Route path="/register" component={RegisterPage}/>
-          <Route path="/cart" component={CartPage}/>
+          <Route path="/register" component={RegisterPage} />          
+          <Route path="/about" component={AboutPage} />
           <Route path="/404" component={NoMatchPage} />
           <Redirect to="/404" />
         </Switch>

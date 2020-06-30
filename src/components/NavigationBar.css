@@ -6,7 +6,7 @@
     font-family: 'Catamaran', sans-serif;
     font-size: 2rem;
     font-weight: bold;
-	color: #79d70f;
+	color: 	#79d70f;
 	text-decoration: none;
     margin-left: 1%;
     padding-bottom: 0px;
@@ -22,6 +22,13 @@
     padding-bottom: 0px;
 }
 
+.navbar-light .navbar-nav .nav-link{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	color: #3498db;
+}
+
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Roboto', sans-serif;
 	font-size: 1rem;
@@ -32,8 +39,6 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	transition: 1s;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
   }
   .navbar-light .navbar-nav .nav-link::after {
 	position: absolute;
@@ -47,15 +52,19 @@
 	transform: scaleX(0);
 	transform-origin: right;
   }
-    .navbar-light .navbar-nav .nav-link:hover {
+  .navbar-light .navbar-nav .nav-link:hover {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.2rem;
 	font-weight: bold;
-	color: #3498db;
   }
   .navbar-light .navbar-nav .nav-link:hover::after {
 	transform: scaleX(1);
 	transform-origin: left;
   }
 
-  
+  @media (max-width: 1028px) {
+
+	.navbar-light {
+	  text-align: center;
+	}
+  }

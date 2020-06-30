@@ -1,15 +1,14 @@
 import React from 'react';
 import Jumbotron from '../components/Jumbotron';
-import { Container, Image, Row} from 'react-bootstrap';
+import { Container, Image, Row } from 'react-bootstrap';
 
 //External css
 import classes from './Home.module.css';
-import './Home.module.css';
 
 //Images
 import ScheduleImg from '../assets/images/schedule.png';
 import EncashImg from '../assets/images/encash.png';
-import SegregateImg from '../assets/images/segregate.png';
+import SegregateImg from '../assets/images/segregate.png'
 import Newspaper from '../assets/images/newspapers.png';
 import Metal from "../assets/images/metal.png";
 import Plastic from '../assets/images/plasticss.png';
@@ -17,12 +16,17 @@ import Ewaste from '../assets/images/ewaste.jpg';
 
 const homePage = () => (
     <div>
-        <Jumbotron id="top"/>
+        <Jumbotron />
         <Container>
-        <Row id="services" className="d-flex justify-content-center">
-                <h2 className={classes.head}>SEGREGATE & RECYCLE</h2>
+            <Row id="myServicesRow" className="d-flex justify-content-center">
+                <h2 className={classes.serviceHead}>REDUCE, SEGREGATE, & RECYCLE</h2>
             </Row>
-         <Row className="d-flex justify-content-center">
+
+            <Row className="d-flex justify-content-center">
+                <p className={classes.servicePara}>We follow a 4 Step Process to help you recycle your Dry Waste.</p>
+            </Row>
+
+            <Row className="d-flex justify-content-center">
                 <div className="col-lg-3 col-md-6 text-center">
                     <Image src={SegregateImg} />
                     <h4 className={classes.serviceHead}>1. Segregate</h4>
@@ -36,16 +40,14 @@ const homePage = () => (
                 <div className="col-lg-3 col-md-6 text-center">
                     <Image src={EncashImg} />
                     <h4 className={classes.serviceHead}>3. Encash</h4>
-                    <p className={classes.servicePara}>Cash for your Trash is instantly transferred!</p>
+                    <p className={classes.servicePara}>Cash for your Trash is instantly given to you by the collector.</p>
                 </div>
                 <div className="col-lg-3 col-md-6 text-center">
-                    <span><i className="fa fa-recycle" style={{ fontSize: 190, marginTop: 32, marginBottom:32, color: "green" }}></i></span>
+                    <span><i className="fa fa-recycle" style={{ fontSize: 190, marginTop: 32, marginBottom: 32, color: "green" }}></i></span>
                     <h4 className={classes.serviceHead}>4. Recycle</h4>
                     <p className={classes.servicePara}>We'll help you do your bit for the environment, by getting the waste recycled!</p>
                 </div>
             </Row>
-   
-
             <Row id="categories" className="d-flex justify-content-center">
                 <h2 className={classes.ihead}>WHAT WE COLLECT!</h2>
             </Row>
@@ -63,7 +65,7 @@ const homePage = () => (
                 </div>
                 <div className="col-lg-3 col-md-6 text-center">
                     <Image src={Metal} />
-                    <h4 className={classes.itemHead}>All sorts of Metal</h4>         
+                    <h4 className={classes.itemHead}>All sorts of Metal</h4>
                     <ul >
                         <li>Jar/Cans</li>
                         <li>Old Utensils</li>
@@ -82,14 +84,14 @@ const homePage = () => (
                     </ul>
                 </div>
                 <div className="col-lg-3 col-md-6 text-center">
-                    <Image src={Ewaste}/>
+                    <Image src={Ewaste} />
                     <h4 className={classes.itemHead}>All sorts of E-waste</h4>
                     <ul>
                         <li>TV</li>
                         <li>Computers</li>
                         <li>Other Electronic items</li>
-                    </ul>                    
-                 </div>
+                    </ul>
+                </div>
             </Row>
         </Container>
     </div>

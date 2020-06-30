@@ -1,4 +1,3 @@
-
 import React from 'react';
 import classes from './Login.module.css';
 
@@ -9,9 +8,9 @@ const samplePage = () => {
                     <h2>Login</h2>
                     <form>
                         <p>Username</p>
-                        <input type="text" name="" placeholder="Username" />
+                        <input type="text" name="username" placeholder="Username" />
                         <p>Password</p>
-                        <input type="password" name="" placeholder="Enter Password" />
+                        <input type="password" name="password" placeholder="Enter Password" />
                         <p><input type="checkbox" /> <span className={classes.checkboxText}>Remember Me</span></p>
                         <input type="submit" name="" value="Sign In" />
                     </form>
