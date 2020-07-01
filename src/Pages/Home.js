@@ -18,7 +18,7 @@ const homePage = () => (
     <div>
         <Jumbotron />
         <Container>
-            <Row id="myServicesRow" className="d-flex justify-content-space-around ">
+            <Row id="myServicesRow" className="d-flex justify-content-center">
                 <h2 className={classes.serviceHead}>REDUCE, SEGREGATE, & RECYCLE</h2>
             </Row>
 
@@ -40,7 +40,7 @@ const homePage = () => (
                 <div className="col-lg-3 col-md-6 text-center">
                     <Image src={EncashImg} />
                     <h4 className={classes.serviceHead}>3. Encash</h4>
-                    <p className={classes.servicePara}>Cash for your Trash is instantly transferred to your account!</p>
+                    <p className={classes.servicePara}>Cash for your Trash is instantly given to you by the collector.</p>
                 </div>
                 <div className="col-lg-3 col-md-6 text-center">
                     <span><i className="fa fa-recycle" style={{ fontSize: 190, marginTop: 32, marginBottom: 32, color: "green" }}></i></span>
@@ -92,6 +92,14 @@ const homePage = () => (
                         <li>Other Electronic items</li>
                     </ul>
                 </div>
+            </Row>
+            <Row id="footer" className="d-flex justify-content-center mt-5" >
+                <i className="social-icon fab fa-facebook-f" style={{ marginRight: 20, color: "green" }}>  </i>
+                <i className="social-icon fab fa-twitter" style={{ marginRight: 20, color: "green" }}>  </i>
+                <i className="social-icon fab fa-instagram" style={{ marginRight: 20, color: "green" }}> </i>
+            </Row>
+            <Row className="d-flex justify-content-center mt-2 mb-1">
+                <h6 style={{ color: "green" }}>© Copyright 2020 Kachra Seth</h6>
             </Row>
         </Container>
     </div>

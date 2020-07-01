@@ -14,35 +14,35 @@ const Styles = styled.div`
         position: relative;
         z-index: -2;
     }
-
     .overlay {
         background-color: #000;
-        opacity: 0.5;
+        opacity: 0.6;
         position: absolute;
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
         z-index: -1;
+        
     }
-
     .text-header {
         text-align: center;
         z-index: 0;
         opacity: 1;
-        font-size: 10vw;
+        font-size: 5rem;
         color: white;
-        font-weight: bold;
-        font-family: 'Catamaran', sans-serif;
+        font-family: "Poppins", sans-serif;
     }
-
     .text-header-para {
         z-index: 0;
         opacity: 1;
         text-align: center;
-        font-size: 8vw;
+        font-size: 2rem;
         color: #efefef;
-        font-family: 'Piedra', cursive;
+        font-family: "Poppins", sans-serif;
+    }
+    .container{
+        margin-bottom:2rem;
     }
 `;
 
@@ -51,8 +51,8 @@ const Jumbotron = () => (
         <Jumbo fluid className="jumbo">
             <div className="overlay"></div>
             <Container>
-                <h1 className="text-header">Welcome</h1>
-                <p className="text-header-para">Sell Your Trash in a fly!</p>
+                <h1 className="text-header">Welcome to <b> Kachra Seth </b></h1>
+                <p className="text-header-para">Sell Your Trash at your <b>door step </b> and contribute in <b>proper waste managment</b>.So that we can make our country <b>green and clean. </b></p>
             </Container>
         </Jumbo>
     </Styles>

@@ -3,7 +3,7 @@ html {
 }
 
 .to-top {
-    background-color: aqua;
+    background-color:#79d70f;
     position: fixed;
     bottom: 16px;
     right: 32px;
@@ -14,7 +14,7 @@ html {
     align-items: center;
     justify-content: center;
     font-size: 32px;
-    color: #1f1f1f;
+    color: yellow;
     text-decoration: none;
     opacity: 0;
     pointer-events: none;
@@ -24,5 +24,7 @@ html {
 .to-top.active {
     bottom: 32px;
     pointer-events: auto;
+    text-decoration: none;
     opacity: 1;
+    color:black;
 }
