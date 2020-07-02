@@ -24,6 +24,7 @@ html {
 .to-top.active {
     bottom: 32px;
     pointer-events: auto;
+    text-decoration: none;
     opacity: 1;
     color:black;
 }

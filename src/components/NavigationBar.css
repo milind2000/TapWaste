@@ -6,7 +6,7 @@
     font-family: 'Catamaran', sans-serif;
     font-size: 2rem;
     font-weight: bold;
-	color: 	#79d70f;
+	color: #79d70f;
 	text-decoration: none;
     margin-left: 1%;
     padding-bottom: 0px;
@@ -22,12 +22,6 @@
     padding-bottom: 0px;
 }
 
-.navbar-light .navbar-nav .nav-link{
-	font-family: 'Roboto', sans-serif;
-	font-size: 1rem;
-	font-weight: bold;
-	color: #3498db;
-}
 
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Roboto', sans-serif;
@@ -39,6 +33,7 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	transition: 1s;
+	
   }
   .navbar-light .navbar-nav .nav-link::after {
 	position: absolute;

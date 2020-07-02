@@ -93,13 +93,13 @@ const homePage = () => (
                     </ul>
                 </div>
             </Row>
-        <Row id="footer" className="d-flex justify-content-center mt-5" >
-      <i className="social-icon fab fa-facebook-f" style={{marginRight:20, color: "green" }}>  </i>
-      <i className="social-icon fab fa-twitter" style={{marginRight:20, color: "green" }}>  </i>
-      <i className="social-icon fab fa-instagram" style={{marginRight:20, color: "green" }}> </i>
-      </Row>
-      <Row className="d-flex justify-content-center mt-2 mb-5">
-         <h6 style={{color:"green"}}>© Copyright 2020 Kachra Seth</h6>
+            <Row id="footer" className="d-flex justify-content-center mt-5" >
+                <i className="social-icon fab fa-facebook-f" style={{ marginRight: 20, color: "green" }}>  </i>
+                <i className="social-icon fab fa-twitter" style={{ marginRight: 20, color: "green" }}>  </i>
+                <i className="social-icon fab fa-instagram" style={{ marginRight: 20, color: "green" }}> </i>
+            </Row>
+            <Row className="d-flex justify-content-center mt-2 mb-1">
+                <h6 style={{ color: "green" }}>© Copyright 2020 Kachra Seth</h6>
             </Row>
         </Container>
     </div>

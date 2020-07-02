@@ -6,16 +6,16 @@ const samplePage = () => {
             <div className={classes.body1}>
                 <div className={classes.contactForm}>
                     <h2>Login</h2>
-                    <form>
+                    <form method="POST">
                         <p>Username</p>
-                        <input type="text" name="username" placeholder="Username" />
+                        <input type="text" name="" placeholder="Username" />
                         <p>Password</p>
-                        <input type="password" name="password" placeholder="Enter Password" />
+                        <input type="password" name="" placeholder="Enter Password" />
                         <p><input type="checkbox" /> <span className={classes.checkboxText}>Remember Me</span></p>
                         <input type="submit" name="" value="Sign In" />
                     </form>
                     <div>
-                        <p>New to Kachra Seth? <a href="/register">Sign up now</a></p>
+                        <p>  <a href="/register" style={{color:"yellow"}}>New to Kachra Seth? Sign up now</a></p>
                     </div>
                 </div>
             </div>
