@@ -9,6 +9,10 @@ import classes from './Home.module.css';
 import ScheduleImg from '../assets/images/schedule.png';
 import EncashImg from '../assets/images/encash.png';
 import SegregateImg from '../assets/images/segregate.png'
+import Newspaper from '../assets/images/newspapers.png';
+import Metal from "../assets/images/metal.png";
+import Plastic from '../assets/images/plasticss.png';
+import Ewaste from '../assets/images/ewaste.jpg';
 
 const homePage = () => (
     <div>
@@ -36,13 +40,66 @@ const homePage = () => (
                 <div className="col-lg-3 col-md-6 text-center">
                     <Image src={EncashImg} />
                     <h4 className={classes.serviceHead}>3. Encash</h4>
-                    <p className={classes.servicePara}>Cash for your Trash is instantly transferred to your account!</p>
+                    <p className={classes.servicePara}>Cash for your Trash is instantly given to you by the collector.</p>
                 </div>
                 <div className="col-lg-3 col-md-6 text-center">
                     <span><i className="fa fa-recycle" style={{ fontSize: 190, marginTop: 32, marginBottom: 32, color: "green" }}></i></span>
                     <h4 className={classes.serviceHead}>4. Recycle</h4>
                     <p className={classes.servicePara}>We'll help you do your bit for the environment, by getting the waste recycled!</p>
                 </div>
+            </Row>
+            <Row id="categories" className="d-flex justify-content-center">
+                <h2 className={classes.ihead}>WHAT WE COLLECT!</h2>
+            </Row>
+
+            <Row id="items" className="d-flex justify-content-center">
+                <div className="col-lg-3 col-md-6 text-center">
+                    <Image src={Newspaper} />
+                    <h4 className={classes.itemHead}>All sorts of Papers</h4>
+                    <ul>
+                        <li>Newspapers</li>
+                        <li>Books</li>
+                        <li>Carton Boxes </li>
+                        <li> Packing Materials</li>
+                    </ul>
+                </div>
+                <div className="col-lg-3 col-md-6 text-center">
+                    <Image src={Metal} />
+                    <h4 className={classes.itemHead}>All sorts of Metal</h4>
+                    <ul >
+                        <li>Jar/Cans</li>
+                        <li>Old Utensils</li>
+                        <li>Aluminium/Copper</li>
+                        <li> Iron/Tin</li>
+                        <li> Electric Wire</li>
+                    </ul>
+                </div>
+                <div className="col-lg-3 col-md-6 text-center">
+                    <Image src={Plastic} />
+                    <h4 className={classes.itemHead}>All sorts of Plastics</h4>
+                    <ul>
+                        <li>Plastic Bottles</li>
+                        <li>Cans/Jars</li>
+                        <li>Other plastic materials</li>
+                    </ul>
+                </div>
+                <div className="col-lg-3 col-md-6 text-center">
+                    <Image src={Ewaste} />
+                    <h4 className={classes.itemHead}>All sorts of E-waste</h4>
+                    <ul>
+                        <li>TV</li>
+                        <li>Computers</li>
+                        <li>Other Electronic items</li>
+                    </ul>
+                </div>
+            </Row>
+            <Row id="footer" className="d-flex justify-content-center mt-5" >
+                <i className="social-icon fab fa-facebook-f" style={{ marginRight: 20, color: "green" }}>  </i>
+                <i className="social-icon fab fa-twitter" style={{ marginRight: 20, color: "green" }}>  </i>
+                <i className="social-icon fab fa-instagram" style={{ marginRight: 20, color: "green" }}> </i>
+            </Row>
+            <Row className="d-flex justify-content-center mt-2 mb-1">
+                <h6 style={{ color: "green" }}>© Copyright 2020 Kachra Seth</h6>
             </Row>
         </Container>
     </div>

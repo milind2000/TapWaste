@@ -1,0 +1,120 @@
+.aboutHead{
+    font-family: "Catarman",sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    margin:5rem 0;
+}
+
+.aboutPara{
+    font-family: "Roboto",sans-serif;
+    color: grey;
+    font-size: 1.5rem;
+}
+
+.line{
+    width: 12rem;
+    height: 47px;
+    border-bottom: 5px solid #79d70f;
+    position: absolute;
+    margin-top: 6rem;
+    }
+
+.missionHead{
+    font-family: "Catarman",sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    margin:5rem 0;
+}
+
+.missionPara{
+    font-family: "Roboto",sans-serif;
+    color: grey;
+    font-size: 18px;
+    margin-left: 40rem;
+}
+
+.global{
+    float: left;
+    height: 22rem;
+    width: 35rem;
+    margin-bottom: 5rem;
+}
+
+.smogPara{
+    font-family: "Roboto",sans-serif;
+    color: grey;
+    font-size: 18px;
+    margin-right: 40rem;
+    
+}
+
+.smog{
+
+        float: right;
+        height: 22rem;
+        width: 35rem;
+       margin-bottom: 2rem;
+
+}
+
+.eline{
+    width: 12rem;
+    height: 47px;
+    border-bottom: 5px solid #79d70f;
+    position: absolute;
+    margin-bottom:5rem;
+    margin-left: 35rem;
+    }
+
+    .endPara{
+        font-family: "Roboto",sans-serif;
+        color: grey;
+        font-size: 1.5rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    }
+
+    .endePara{
+        font-family: "Roboto",sans-serif;
+        color: grey;
+        font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    }
+
+    @media (max-width: 1200px) {
+
+        .missionPara{
+            font-family: "Roboto",sans-serif;
+            color: grey;  
+            margin: 5px auto;   
+            text-align: center;   
+        }
+        
+        .global{
+            height: 22rem;
+            width: 35rem;
+            float: none;
+            
+        }
+        
+        .smogPara{
+            font-family: "Roboto",sans-serif;
+            color: grey;
+            font-size: 18px;
+            text-align: center;
+            margin:auto;
+            
+        }
+        
+        .smog{
+        
+                height: 22rem;
+                width: 35rem;
+                float: none;
+        
+        }
+
+      }

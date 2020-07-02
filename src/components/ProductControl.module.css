@@ -1,0 +1,31 @@
+.Mybutton1 {
+    display: inline-block;
+    background-color:  #79d70f;
+    border: 0 black;
+    border-radius: 1rem;
+    width: 50px;
+    margin: 0 1rem;
+    font-size: 3rem;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    
+  }
+
+  .Mybutton1:disabled{
+    display: inline-block;
+    cursor:not-allowed;
+    background-color:  grey;
+    border: 0 black;
+    border-radius: 1rem;
+    width: 50px;
+    margin: 0 1rem;
+    font-size: 3rem;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+  }
+
+  h3{
+        margin-top: 1rem;
+  }
