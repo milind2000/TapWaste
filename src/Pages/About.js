@@ -24,14 +24,14 @@ const aboutPage = () => (
 
             <Row className="d-flex justify-content-center">
                 <div>
-            <img className={classes.global} src={GlobalImg} />
+            <img className={classes.global} src={GlobalImg} alt="globalwarming" />
             <p className={classes.missionPara}>Climate change and environmental degradation have been identified as one of the key issues plaguing us today. In that light, several national and international mandates have been undertaken to combat those components that harm the environment around us.</p>
 
        <p className={classes.missionPara}> Such steps include the National Action Plan on Climate Change by the Government of India, the U.N Framework Convention on Climate Change by the United Nations, and including ‘Climate Action’, and ‘Responsible Consumption and Production’ in the U.N Sustainable Development Goals (SDGs) which acts as a blueprint to ensure a sustainable future for each human.</p>
             </div>
 
                 <div>
-            <img className={classes.smog} src={SmogImg} />
+            <img className={classes.smog} src={SmogImg} alt="smog" />
             <p className={classes.smogPara}>A key component plaguing the environment is the unruly disposal of e-waste. Through the shadow economy and their methods of disposal, and the lack of awareness on the environmental degradation of unprocessed e-waste disposal, harmful toxics are released in the air that affect both the environment and humans.</p>
 
        <p className={classes.smogPara}> The effects of the poor air quality is most visible in Delhi, India where in recent times the air quality has been deemed unlivable. In addition to that, information on sustainable e-waste disposal and availing services for the same is not easily available either.</p>
