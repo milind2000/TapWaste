@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./Login.module.css";
 // import { Redirect } from "react-router-dom";
-import { browserHistory } from "react-router-dom";
+// import { browserHistory } from "react-router-dom";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
