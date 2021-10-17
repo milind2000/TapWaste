@@ -23,4 +23,4 @@ const orderSchema = new Schema({
 
 //userSchema.plugin(uniqueValidator);
 
-module.exports = mongoose.model("Order", userSchema);
+module.exports = mongoose.model("Order", orderSchema);

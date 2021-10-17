@@ -14,4 +14,4 @@ const vendorSchema = new Schema({
 
 //userSchema.plugin(uniqueValidator);
 
-module.exports = mongoose.model("Vendor", userSchema);
+module.exports = mongoose.model("Vendor", vendorSchema);
