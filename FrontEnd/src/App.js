@@ -1,20 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
-import NavigationBar from './components/NavigationBar';
+import NavigationBar from "./components/NavigationBar";
 
 //pages
-import HomePage from './Pages/Home';
-import LoginPage from './Pages/Login';
-import RegisterPage from './Pages/Register';
-import Dashboard from './Pages/Dashboard';
-import AboutPage from './Pages/About';
-import CartPage from './Pages/Cart';
-import NoMatchPage from './Pages/404';
-import UpdatePage from './Pages/UpdateProfile';
-import RegisterVendorPage from './Pages/RegisterVendor';
-import LoginVendorPage from './Pages/LoginVendor';
-import OrdersPage from './Pages/Orders';
+import HomePage from "./Pages/Home";
+import LoginPage from "./Pages/Login";
+import RegisterPage from "./Pages/Register";
+import Dashboard from "./Pages/Dashboard";
+import AboutPage from "./Pages/About";
+import CartPage from "./Pages/Cart";
+import NoMatchPage from "./Pages/404";
+import UpdatePage from "./Pages/UpdateProfile";
+import RegisterVendorPage from "./Pages/RegisterVendor";
+import LoginVendorPage from "./Pages/LoginVendor";
+import OrdersPage from "./Pages/Orders";
 
 function App() {
   return (
@@ -29,7 +34,7 @@ function App() {
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/registervendor" component={RegisterVendorPage} />
-          <Route path="/user-controls" component={UpdatePage} />          
+          <Route path="/user-controls" component={UpdatePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/orders" component={OrdersPage} />
           <Route path="/404" component={NoMatchPage} />
