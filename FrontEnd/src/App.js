@@ -14,6 +14,7 @@ import NoMatchPage from './Pages/404';
 import UpdatePage from './Pages/UpdateProfile';
 import RegisterVendorPage from './Pages/RegisterVendor';
 import LoginVendorPage from './Pages/LoginVendor';
+import OrdersPage from './Pages/Orders';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/registervendor" component={RegisterVendorPage} />
           <Route path="/user-controls" component={UpdatePage} />          
           <Route path="/about" component={AboutPage} />
+          <Route path="/orders" component={OrdersPage} />
           <Route path="/404" component={NoMatchPage} />
           <Redirect to="/404" />
         </Switch>

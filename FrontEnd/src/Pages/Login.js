@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Login.module.css';
 
-const samplePage = () => {
+const loginPage = () => {
     return (
             <div className={classes.body1}>
                 <div className={classes.contactForm}>
@@ -23,4 +23,4 @@ const samplePage = () => {
     );
 }
 
-export default samplePage;
+export default loginPage;
