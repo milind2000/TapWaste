@@ -12,6 +12,8 @@ import AboutPage from './Pages/About';
 import CartPage from './Pages/Cart';
 import NoMatchPage from './Pages/404';
 import UpdatePage from './Pages/UpdateProfile';
+import RegisterVendorPage from './Pages/RegisterVendor';
+import LoginVendorPage from './Pages/LoginVendor';
 
 function App() {
   return (
@@ -22,8 +24,10 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/cart" component={CartPage} />
           <Route path="/login" component={LoginPage} />
+          <Route path="/loginvendor" component={LoginVendorPage} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/register" component={RegisterPage} />
+          <Route path="/registervendor" component={RegisterVendorPage} />
           <Route path="/user-controls" component={UpdatePage} />          
           <Route path="/about" component={AboutPage} />
           <Route path="/404" component={NoMatchPage} />

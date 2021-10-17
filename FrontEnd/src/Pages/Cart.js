@@ -271,7 +271,7 @@ class CartPage extends Component {
                         <i className="social-icon fab fa-instagram" style={{ marginRight: 20, color: "green" }}> </i>
                     </Row>
                     <Row className="d-flex justify-content-center mt-2 mb-1">
-                        <h6 style={{ color: "green" }}>© Copyright 2020 Kachra Seth</h6>
+                        <h6 style={{ color: "green" }}>© Copyright 2021 Tap Waste</h6>
                     </Row>
                 </Container>
             </div>

@@ -5,7 +5,7 @@ const samplePage = () => {
     return (
             <div className={classes.body1}>
                 <div className={classes.contactForm}>
-                    <h2>Login</h2>
+                    <h2>Login<p>(for vendors)</p></h2>
                     <form method="POST">
                         <p>Username</p>
                         <input type="text" name="" placeholder="Username" />
@@ -15,8 +15,7 @@ const samplePage = () => {
                         <input type="submit" name="" value="Sign In" />
                     </form>
                     <div>
-                        <p>  <a href="/register" style={{color:"yellow"}}>New user to Tap Waste? Sign up here</a></p>
-                        <p>  <a href="/loginvendor" style={{color:"yellow"}}>login/signup for vendors</a></p>
+                        <p>  <a href="/registervendor" style={{color:"yellow"}}>New vendor to Tap Waste? Sign up now</a></p>
                     </div>
                 </div>
             </div>

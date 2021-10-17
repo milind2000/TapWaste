@@ -5,7 +5,7 @@ const registerPage = () => {
     return (
             <div className={classes.body1}>
                 <div className={classes.contactForm}>
-                    <h2>REGISTER</h2>
+                    <h2>REGISTER<p>(for vendors)</p></h2>
                     <form method="POST">
                         <p>Name</p>
                         <input type="text" name="" placeholder="Enter your name" />
