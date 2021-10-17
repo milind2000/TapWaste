@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import classes from "./Login.module.css";
 // import { Redirect } from "react-router-dom";
-// import { browserHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -18,8 +19,7 @@ const LoginPage = () => {
     });
     if (response.status === 200) {
       console.log("Login Successfull");
-      //   return <Redirect to="/" />;
-      browserHistory.push("/");
+      history.push("/");
     } else {
       console.log(response);
       alert("Email or Password wrong!!");

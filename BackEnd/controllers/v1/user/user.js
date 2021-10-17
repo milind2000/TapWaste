@@ -45,6 +45,7 @@ const register = async function (req, res) {
     res.status(500).send("Error in Saving");
   }
 };
+
 const login = async function (req, res) {
   const { phone, email, password } = req.body;
   console.log(phone, email, password);

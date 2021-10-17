@@ -1,25 +1,66 @@
-import React from 'react';
-import classes from './Login.module.css';
+import React, { useState } from "react";
+import classes from "./Login.module.css";
+import { useHistory } from "react-router-dom";
 
-const loginPage = () => {
-    return (
-            <div className={classes.body1}>
-                <div className={classes.contactForm}>
-                    <h2>Login<p>(for vendors)</p></h2>
-                    <form method="POST">
-                        <p>Username</p>
-                        <input type="text" name="" placeholder="Username" />
-                        <p>Password</p>
-                        <input type="password" name="" placeholder="Enter Password" />
-                        <p><input type="checkbox" /> <span className={classes.checkboxText}>Remember Me</span></p>
-                        <input type="submit" name="" value="Sign In" />
-                    </form>
-                    <div>
-                        <p>  <a href="/registervendor" style={{color:"yellow"}}>New vendor to Tap Waste? Sign up now</a></p>
-                    </div>
-                </div>
-            </div>
-    );
-}
+const LoginVendorPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
 
-export default loginPage;
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const send = JSON.stringify({ email: email, password: password });
+    console.log(send);
+    const response = await fetch("http://localhost:5000/posts/vendor/login", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: send,
+    });
+    if (response.status === 200) {
+      console.log("Login Vendor Successfull");
+      history.push("/");
+    } else {
+      console.log(response);
+      alert("Email or Password wrong!!");
+    }
+  }
+
+  return (
+    <div className={classes.body1}>
+      <div className={classes.contactForm}>
+        <h2>Login(FOR VENDORS)</h2>
+        <form onSubmit={handleSubmit}>
+          <p>Username</p>
+          <input
+            type="text"
+            name=""
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <p>Password</p>
+          <input
+            type="password"
+            name=""
+            placeholder="Enter Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <p>
+            <input type="checkbox" />{" "}
+            <span className={classes.checkboxText}>Remember Me</span>
+          </p>
+          <input type="submit" name="" value="Sign In" />
+        </form>
+        <div>
+          <p>
+            {" "}
+            <a href="/registervendor" style={{ color: "yellow" }}>
+              New Vendor to Tap Waste? Sign up here
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LoginVendorPage;
