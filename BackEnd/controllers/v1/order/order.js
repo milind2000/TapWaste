@@ -16,6 +16,21 @@ const addItem = async function (req, res) {
     },
   });
 };
+
+const showOrders = async function (_, res) {
+  Item.find()
+    .then((result) => {
+      res.status(200).json({
+        productData: result,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: err });
+    });
+};
+
 module.exports = {
   addItem: addItem,
+  showOrders: showOrders,
 };
