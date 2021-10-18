@@ -16,18 +16,16 @@ const SocialCard = ({ userData }) => {
 
   return (
     <div className={classes.card}>
-      <div className={classes.cardtitle}>
-        {userData.name.first} {userData.name.last}
-      </div>
+      <div className={classes.cardtitle}>ID/Name of the user</div>
       <div className={classes.cardbody}>
         <div className={classes.location}>
-          <p>Address : {userData.address}</p>
-          <p>Pincode : {userData.pincode}</p>
+          <p>Address : Address of the owner</p>
+          <p>Pincode : 45XXXX</p>
         </div>
         <div className={classes.phoneNumber}>
-          <p>Mobile No. : {userData.phone}</p>
+          <p>Mobile No. : 9XXXXXXXXX</p>
         </div>
-        <p>Estimate Amount : {userData.estimateAmount}</p>
+        <p>Estimate Amount : {userData.amount}</p>
         <Button variant={color} onClick={lockButtonClicked}>
           {buttonText}
         </Button>

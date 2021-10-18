@@ -21,7 +21,7 @@ const showOrders = async function (_, res) {
   Item.find()
     .then((result) => {
       res.status(200).json({
-        productData: result,
+        order: result,
       });
     })
     .catch((err) => {

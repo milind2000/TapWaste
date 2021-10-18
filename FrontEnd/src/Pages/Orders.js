@@ -10,14 +10,14 @@ function OrdersPage() {
     (async () => {
       let userData;
       try {
-        const response = await fetch("https://localhost:5000/posts/orders");
+        const response = await fetch("http://localhost:5000/posts/orders");
         userData = await response.json();
-        console.log(userData);
+        //console.log(userData.order);
       } catch (error) {
         console.log(error);
         userData = [];
       }
-      setUsers(userData);
+      setUsers(userData.order);
     })();
   }, []);
 

@@ -35,7 +35,7 @@ const RegisterPage = () => {
       history.push("/login");
     } else {
       console.log(response);
-      alert("Wrong Credentials!");
+      alert("Wrong Credentials!!");
     }
   }
 
