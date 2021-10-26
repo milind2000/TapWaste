@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import classes from "./Login.module.css";
-// import { Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 const LoginPage = () => {

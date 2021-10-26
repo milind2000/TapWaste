@@ -1,4 +1,6 @@
 const Item = require("../../../models/Order.js");
+const User = require("../../../models/User.js");
+
 const addItem = async function (req, res) {
   const amount = req.body.amount;
   const acquired = req.body.acquired;

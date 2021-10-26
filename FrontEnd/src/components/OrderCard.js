@@ -16,7 +16,7 @@ const SocialCard = ({ userData }) => {
 
   return (
     <div className={classes.card}>
-      <div className={classes.cardtitle}>ID/Name of the user</div>
+      <div className={classes.cardtitle}>ID/Name of the User</div>
       <div className={classes.cardbody}>
         <div className={classes.location}>
           <p>Address : Address of the owner</p>
