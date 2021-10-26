@@ -64,7 +64,7 @@ const login = async function (req, res) {
           message: "Incorrect Password !",
         });
       }
-      var accessToken = jwt.sign({ phone: phone , userId: user._id.toString()}, "accessTokenSecret", {expiresIn :"1 days"});
+      var accessToken = jwt.sign({ phone: phone , id: user._id}, "accessTokenSecret", {expiresIn :"1 days"});
         user.jwtToken = accessToken; 
         await user.save();
         res.status(200).json({
@@ -87,7 +87,7 @@ const login = async function (req, res) {
           message: "Incorrect Password !",
         });
       }
-      var accessToken = jwt.sign({ email: email , userId: user._id.toString()}, "accessTokenSecret", {expiresIn :"1 days"});
+      var accessToken = jwt.sign({id: user._id}, "accessTokenSecret", {expiresIn :"1 days"});
         user.jwtToken = accessToken; 
         await user.save();
         res.status(200).json({
