@@ -25,19 +25,17 @@ const addItem = async function (req, res) {
   //   }
     const userId= req.body.userId;
     const amount=req.body.amount;
-    const acquired =req.body.acquired;
-    let owner=null;
+    const acquired= req.body.acquired
+    var owner=null;
     user.findById(userId, function (err, doc) {
       if (err){
           console.log(err);
       }
       else{
-        console.log(doc);
-          // owner={...doc};
-          owner= Object.assign({}, doc);
+        console.log(typeof doc);
+          owner={...doc};
       }
     });
-    console.log(owner);
     const item = new Item({
       amount: amount,
       acquired: acquired,
