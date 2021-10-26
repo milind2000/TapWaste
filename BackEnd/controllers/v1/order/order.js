@@ -1,21 +1,56 @@
 const Item = require("../../../models/Order.js");
 const jwt = require("jsonwebtoken");
+const user=require("../../../models/User.js");
 const addItem = async function (req, res) {
-    const amount = req.body.amount;
-    const acquired = req.body.acquired;
-    const owner = req.body.owner;
+  // var accessToken = req.get("Authorization");
+  //   if(!accessToken){
+  //     res.status(401).json({
+  //       "status": "not authenticated"
+  //     });
+  //   }
+  //   const token= accessToken.split(" ")[1];
+  //   let decodedToken;
+  //   console.log(token);
+  //   try{
+  //     decodedToken= jwt.verify(token, "accessTokenSecret");
+  //   } 
+  //   catch(error)
+  //   {
+  //     error.statusCode=500;
+  //     throw error;
+  //   }
+  //   if(!decodedToken)
+  //   {
+  //       res.status()
+  //   }
+    const userId= req.body.userId;
+    const amount=req.body.amount;
+    const acquired =req.body.acquired;
+    let owner=null;
+    user.findById(userId, function (err, doc) {
+      if (err){
+          console.log(err);
+      }
+      else{
+        console.log(doc);
+          // owner={...doc};
+          owner= Object.assign({}, doc);
+      }
+    });
+    console.log(owner);
     const item = new Item({
-    amount: amount,
-    acquired: acquired,
-    owner: owner,
-  });
+      amount: amount,
+      acquired: acquired,
+      owner: owner,
+    });
     await item.save();
     res.status(200).send({
-    message: "Created Successfully",
-    itemData: {
-      item,
-    },
-  });
+      message: "Created Successfully",
+      itemData: {
+        item,
+      },
+    });
+ 
 };
 
 const showOrders = async function (_, res) {
