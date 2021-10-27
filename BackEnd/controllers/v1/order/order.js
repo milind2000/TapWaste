@@ -55,7 +55,7 @@ const addItem = async function (req, res) {
 };
 
 const showOrders = async function (_, res) {
-  await Item.find({
+  Item.find({
     acquired: false,
   })
     .then((result) => {
