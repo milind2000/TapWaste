@@ -27,7 +27,6 @@ const addItem = async function (req, res) {
   if (req.headers && req.headers.authorization) {
     var authorization = req.headers.authorization.split(" ")[1],
       decoded;
-    console.log(authorization);
     try {
       decoded = jwt.verify(authorization, "accessTokenSecret");
     } catch (e) {
@@ -35,13 +34,11 @@ const addItem = async function (req, res) {
     }
     userId = decoded.userId;
   }
-
   const amount = req.body.amount;
   const acquired = req.body.acquired;
 
   let owner;
   owner = await User.findById(userId);
-  console.log(owner);
 
   const item = new Item({
     amount: amount,
@@ -58,7 +55,7 @@ const addItem = async function (req, res) {
 };
 
 const showOrders = async function (_, res) {
-  await Item.findOne({
+  await Item.find({
     acquired: false,
   })
     .then((result) => {
