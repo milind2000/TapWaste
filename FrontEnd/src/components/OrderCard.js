@@ -8,24 +8,25 @@ const SocialCard = ({ userData }) => {
 
   function lockButtonClicked() {
     console.log("Clicked");
-    //check if already locked else send data
-    // if already locked, alert already locked
+
     setColor("success");
     setbuttonText("Acquired");
   }
 
   return (
     <div className={classes.card}>
-      <div className={classes.cardtitle}>ID/Name of the User</div>
+      <div className={classes.cardtitle}>
+        {userData.owner.name.toUpperCase()}
+      </div>
       <div className={classes.cardbody}>
         <div className={classes.location}>
-          <p>Address : Address of the owner</p>
-          <p>Pincode : 45XXXX</p>
+          <p>Address : {userData.owner.address.toUpperCase()}</p>
+          <p>Pincode : {userData.owner.pincode}</p>
         </div>
         <div className={classes.phoneNumber}>
-          <p>Mobile No. : 9XXXXXXXXX</p>
+          <p>Mobile No. : {userData.owner.phone}</p>
         </div>
-        <p>Estimate Amount : {userData.amount}</p>
+        <p>Estimate Amount : Rs. {userData.amount}</p>
         <Button variant={color} onClick={lockButtonClicked}>
           {buttonText}
         </Button>

@@ -1,8 +1,7 @@
-import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
-import '../index.css';
-import './NavigationBar.css';
-
+import React from "react";
+import { Nav, Navbar } from "react-bootstrap";
+import "../index.css";
+import "./NavigationBar.css";
 
 const navigationBar = () => (
   <Navbar bg="light" expand="lg" sticky="top">
@@ -14,10 +13,10 @@ const navigationBar = () => (
         <Nav.Link href="/about">About Us</Nav.Link>
         <Nav.Link href="/cart">Add to Cart</Nav.Link>
         <Nav.Link href="/#myServicesRow">Our Services</Nav.Link>
-        {/* <Nav.Link href="/dashboard">Profile</Nav.Link> */}
+        <Nav.Link href="/login">LOGIN</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
-)
+);
 
 export default navigationBar;

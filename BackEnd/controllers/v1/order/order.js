@@ -55,9 +55,14 @@ const addItem = async function (req, res) {
 };
 
 const showOrders = async function (_, res) {
+<<<<<<< HEAD
   Item.find({
+=======
+  await Item.find({
+>>>>>>> be1fd68d8f46aa8f1265de7fa68def311b723b68
     acquired: false,
   })
+    .populate("owner")
     .then((result) => {
       res.status(200).json({
         order: result,
