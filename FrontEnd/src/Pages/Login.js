@@ -17,6 +17,9 @@ const LoginPage = () => {
       body: send,
     });
     if (response.status === 200) {
+      const res = await response.json();
+      sessionStorage.setItem("btoken", res.accessToken);
+      // localStorage.setItem("btoken", res.accessToken);
       console.log("Login Successfull");
       history.push("/");
     } else {

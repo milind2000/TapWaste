@@ -34,8 +34,9 @@ const addItem = async function (req, res) {
       return res.status(401).send("unauthorized");
     }
     userId = decoded.userId;
+  } else {
+    return res.status(401).send("unauthorized");
   }
-
   const amount = req.body.amount;
   const acquired = req.body.acquired;
 

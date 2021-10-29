@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Image, Row, Button } from "react-bootstrap";
+import Axios from "axios";
 
 import classes from "./Cart.module.css";
 import ProductControl from "../components/ProductControl";
@@ -46,6 +47,9 @@ const productTypes = {
   cpu: "cpu",
   lcd: "lcd",
 };
+
+const token = sessionStorage.getItem("btoken");
+// const token = localStorage.getItem("btoken");
 
 class CartPage extends Component {
   state = {
@@ -96,6 +100,35 @@ class CartPage extends Component {
     const oldPrice = this.state.estimatedPrice;
     const newPrice = oldPrice - priceDeduction;
     this.setState({ estimatedPrice: newPrice, products: updatedProducts });
+  };
+
+  handleButtonClick = (event) => {
+    event.preventDefault();
+    if (!token) {
+      alert("Please Login to place an order!!");
+      return;
+    }
+    if (this.state.estimatedPrice <= 100) {
+      alert("Order value must be greater than 100.");
+      return;
+    }
+    Axios.post(
+      "http://localhost:5000/posts/addOrder",
+      {
+        amount: this.state.estimatedPrice,
+        acquired: false,
+      },
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    ).then((response) => {
+      // console.log(response);
+      if (response.status === 200) {
+        alert("Order Placed!!");
+      } else if (response.status === 401) {
+        alert("Please Login to place an order!!");
+      }
+    });
   };
 
   render() {
@@ -299,7 +332,12 @@ class CartPage extends Component {
           </div>
 
           <div className="col text-center mb-4">
-            <Button href="/" variant="success" size="lg">
+            <Button
+              href="/"
+              variant="success"
+              size="lg"
+              onClick={this.handleButtonClick}
+            >
               Place Order
             </Button>
           </div>
