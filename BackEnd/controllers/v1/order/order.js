@@ -3,31 +3,11 @@ const jwt = require("jsonwebtoken");
 const User = require("../../../models/User.js");
 
 const addItem = async function (req, res) {
-  // var accessToken = req.get("Authorization");
-  // if (!accessToken) {
-  //   res.status(401).json({
-  //     status: "not authenticated",
-  //   });
-  // }
-  // const token = accessToken.split(" ")[1];
-  // let decodedToken;
-  // console.log(token);
-  // try {
-  //   decodedToken = jwt.verify(token, "accessTokenSecret");
-  // } catch (error) {
-  //   error.statusCode = 500;
-  //   throw error;
-  // }
-  // if (!decodedToken) {
-  //   res.status();
-  // }
-  // const userId = decodedToken.;
-
   var userId;
   if (req.headers && req.headers.authorization) {
     var authorization = req.headers.authorization.split(" ")[1],
       decoded;
-    console.log(authorization);
+    //console.log(authorization);
     try {
       decoded = jwt.verify(authorization, "accessTokenSecret");
     } catch (e) {
@@ -42,7 +22,7 @@ const addItem = async function (req, res) {
 
   let owner;
   owner = await User.findById(userId);
-  console.log(owner);
+  //console.log(owner);
 
   const item = new Item({
     amount: amount,
@@ -59,7 +39,7 @@ const addItem = async function (req, res) {
 };
 
 const showOrders = async function (_, res) {
-  await Item.find({
+  Item.find({
     acquired: false,
   })
     .populate("owner")
@@ -70,11 +50,34 @@ const showOrders = async function (_, res) {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json({ error: err });
+      res.status(401).json({ error: err });
     });
+};
+
+const updateOrders = async function (req, res) {
+  const value = req.body.acquired;
+  console.log(req.body.id);
+  Item.findByIdAndUpdate(
+    req.body.id,
+    {
+      acquired: !value,
+    },
+    function (err, docs) {
+      if (err) {
+        // console.log(err);
+        res.status(401);
+      } else {
+        //console.log("updated!!!back");
+        res.status(202).send({
+          message: "Updated Order successfully",
+        });
+      }
+    }
+  );
 };
 
 module.exports = {
   addItem: addItem,
   showOrders: showOrders,
+  updateOrders: updateOrders,
 };
