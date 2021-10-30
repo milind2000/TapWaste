@@ -29,13 +29,19 @@ const addItem = async function (req, res) {
     acquired: acquired,
     owner: owner,
   });
-  await item.save();
-  res.status(200).send({
-    message: "Created Successfully",
-    itemData: {
-      item,
-    },
-  });
+  item
+    .save()
+    .then(() => {
+      res.status(200).send({
+        message: "Created Successfully",
+        itemData: {
+          item,
+        },
+      });
+    })
+    .catch((err) => {
+      re.status(400).send(err);
+    });
 };
 
 const showOrders = async function (_, res) {

@@ -31,17 +31,23 @@ const addVendor = async function (req, res) {
       const salt = await bcrypt.genSalt(10);
       var hashpassword = await bcrypt.hash(password, salt);
       vendor.password = hashpassword;
-      await vendor.save();
-      res.status(200).send({
-        message: "Created Successfully",
-        userData: {
-          vendor,
-        },
-      });
+      vendor
+        .save()
+        .then(() => {
+          res.status(200).send({
+            message: "Created Successfully",
+            userData: {
+              vendor,
+            },
+          });
+        })
+        .catch((err) => {
+          res.status(400).send(err);
+        });
     }
   } catch (err) {
     console.log(err.message);
-    res.status(500).send("Error in Saving");
+    res.status(400).send("Error in Saving");
   }
 };
 
@@ -63,14 +69,18 @@ const login = async function (req, res) {
           message: "Incorrect Password !",
         });
       }
-      var accessToken = jwt.sign({ phone: phone , userId: user._id.toString()}, "accessTokenSecret", {expiresIn :"1 days"});
-        user.jwtToken = accessToken; 
-        await user.save();
-        res.status(200).json({
-          message: "LoggedIn Successfully",
-          accessToken: accessToken,
-          user
-      });   
+      var accessToken = jwt.sign(
+        { phone: phone, userId: user._id.toString() },
+        "accessTokenSecret",
+        { expiresIn: "1 days" }
+      );
+      user.jwtToken = accessToken;
+      await user.save();
+      res.status(200).json({
+        message: "LoggedIn Successfully",
+        accessToken: accessToken,
+        user,
+      });
     } else if (email) {
       var user = await Vendor.findOne({
         email: email,
@@ -86,15 +96,19 @@ const login = async function (req, res) {
           message: "Incorrect Password !",
         });
       }
-      var accessToken = jwt.sign({ email: email , userId: user._id.toString()}, "accessTokenSecret", {expiresIn :"1 days"});
-        user.jwtToken = accessToken; 
-        await user.save();
-        res.status(200).json({
+      var accessToken = jwt.sign(
+        { email: email, userId: user._id.toString() },
+        "accessTokenSecret",
+        { expiresIn: "1 days" }
+      );
+      user.jwtToken = accessToken;
+      await user.save();
+      res.status(200).json({
         message: "LoggedIn Successfully",
         accessToken: accessToken,
-      });   
+      });
     } else {
-      res.status(500).json({
+      res.status(401).json({
         message: "Incorrect Input",
       });
     }
@@ -106,8 +120,7 @@ const login = async function (req, res) {
   }
 };
 
-const check = async function(req, res)
-{
+const check = async function (req, res) {
   var userId;
   if (req.headers && req.headers.authorization) {
     var authorization = req.headers.authorization.split(" ")[1],
@@ -115,21 +128,20 @@ const check = async function(req, res)
     try {
       decoded = jwt.verify(authorization, "accessTokenSecret");
     } catch (e) {
-      return res.status(401).send("unauthorized");
+      return res.status(401).send("unauthorized vendor");
     }
     userId = decoded.userId;
+    console.log(userId);
   } else {
-    return res.status(401).send("unauthorized");
+    return res.status(401).send("unauthorized.Session expired");
   }
+
   let vendor;
   vendor = await Vendor.findById(userId);
-  if(vendor!=null)
-  {
+  if (vendor != null) {
     res.status(200).send("true");
     return true;
-  }
-  else
-  {
+  } else {
     res.status(401).send("false");
     return false;
   }
@@ -137,5 +149,5 @@ const check = async function(req, res)
 module.exports = {
   addVendor: addVendor,
   login: login,
-  check : check,
+  check: check,
 };

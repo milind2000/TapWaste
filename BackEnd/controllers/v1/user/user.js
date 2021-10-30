@@ -18,7 +18,7 @@ const register = async function (req, res) {
     if (user) {
       return res.status(400).json({
         msg: "User Already Exists",
-      }); 
+      });
     } else {
       user = new User({
         name: name,
@@ -32,13 +32,19 @@ const register = async function (req, res) {
       const salt = await bcrypt.genSalt(10);
       var hashpassword = await bcrypt.hash(password, salt);
       user.password = hashpassword;
-      await user.save();
-      res.status(200).send({
-        message: "Created Successfully",
-        userData: {
-          user,
-        },
-      });
+      user
+        .save()
+        .then(() => {
+          res.status(200).send({
+            message: "Created Successfully",
+            userData: {
+              user,
+            },
+          });
+        })
+        .catch((error) => {
+          res.status(400).send(error);
+        });
     }
   } catch (err) {
     console.log(err.message);
@@ -64,14 +70,18 @@ const login = async function (req, res) {
           message: "Incorrect Password !",
         });
       }
-      var accessToken = jwt.sign({ phone: phone , userId: user._id.toString()}, "accessTokenSecret", {expiresIn :"1 days"});
-        user.jwtToken = accessToken; 
-        await user.save();
-        res.status(200).json({
-          message: "LoggedIn Successfully",
-          accessToken: accessToken,
-          user
-      });   
+      var accessToken = jwt.sign(
+        { phone: phone, userId: user._id.toString() },
+        "accessTokenSecret",
+        { expiresIn: "1 days" }
+      );
+      user.jwtToken = accessToken;
+      await user.save();
+      res.status(200).json({
+        message: "LoggedIn Successfully",
+        accessToken: accessToken,
+        user,
+      });
     } else if (email) {
       var user = await User.findOne({
         email: email,
@@ -87,13 +97,17 @@ const login = async function (req, res) {
           message: "Incorrect Password !",
         });
       }
-      var accessToken = jwt.sign({ email: email , userId: user._id.toString()}, "accessTokenSecret", {expiresIn :"1 days"});
-        user.jwtToken = accessToken; 
-        await user.save();
-        res.status(200).json({
+      var accessToken = jwt.sign(
+        { email: email, userId: user._id.toString() },
+        "accessTokenSecret",
+        { expiresIn: "1 days" }
+      );
+      user.jwtToken = accessToken;
+      await user.save();
+      res.status(200).json({
         message: "LoggedIn Successfully",
         accessToken: accessToken,
-      });   
+      });
     } else {
       res.status(500).json({
         message: "Incorrect Input",

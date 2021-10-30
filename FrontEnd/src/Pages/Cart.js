@@ -125,7 +125,7 @@ class CartPage extends Component {
       // console.log(response);
       if (response.status === 200) {
         alert("Order Placed!!");
-      } else if (response.status === 401) {
+      } else {
         alert("Please Login to place an order!!");
       }
     });

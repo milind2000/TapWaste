@@ -11,5 +11,5 @@ app.post("/addOrder", Order.addItem);
 app.patch("/updateOrders", Order.updateOrders);
 app.post("/vendor/signup", Vendor.addVendor);
 app.post("/vendor/login", Vendor.login);
-app.post("/checkVendor", Vendor.check);
+app.get("/checkVendor", Vendor.check);
 module.exports = app;

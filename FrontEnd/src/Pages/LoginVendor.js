@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import classes from "./Login.module.css";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "../App";
 
 const LoginVendorPage = () => {
+  const { state, dispatch } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -16,10 +18,12 @@ const LoginVendorPage = () => {
       headers: { "Content-Type": "application/json" },
       body: send,
     });
+
     if (response.status === 200) {
+      console.log(state);
+      dispatch({ type: "VENDOR", payload: true });
       const res = await response.json();
       sessionStorage.setItem("btoken", res.accessToken);
-      // localStorage.setItem("btoken", res.accessToken);
       console.log("Login Vendor Successfull");
       history.push("/");
     } else {
