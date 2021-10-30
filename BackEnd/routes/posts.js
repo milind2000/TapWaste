@@ -8,7 +8,8 @@ app.post("/signup", User.register);
 app.post("/login", User.login);
 app.get("/orders", Order.showOrders);
 app.post("/addOrder", Order.addItem);
+app.patch("/updateOrders", Order.updateOrders);
 app.post("/vendor/signup", Vendor.addVendor);
 app.post("/vendor/login", Vendor.login);
-
+app.post("/checkVendor", Vendor.check);
 module.exports = app;

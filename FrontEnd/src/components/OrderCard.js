@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import Axios from "axios";
 import classes from "./OrderCard.module.css";
 
 const SocialCard = ({ userData }) => {
@@ -7,10 +8,48 @@ const SocialCard = ({ userData }) => {
   const [buttonText, setbuttonText] = useState("Available");
 
   function lockButtonClicked() {
-    console.log("Clicked");
-
-    setColor("success");
-    setbuttonText("Acquired");
+    if (buttonText === "Available") {
+      Axios.patch(
+        "http://localhost:5000/posts/updateOrders",
+        {
+          id: userData._id,
+          acquired: false,
+        },
+        {}
+      )
+        .then((response) => {
+          console.log(response);
+          if (response.status === 202) {
+            console.log("updteing");
+            alert("Order Updated!!");
+            setColor("success");
+            setbuttonText("Acquired");
+          } else if (response.status === 401) {
+            alert("Unable to update!");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      Axios.patch(
+        "http://localhost:5000/posts/updateOrders",
+        {
+          id: userData._id,
+          acquired: true,
+        },
+        {}
+      ).then((response) => {
+        // console.log(response);
+        if (response.status === 202) {
+          alert("Order Updated!!");
+          setColor("primary");
+          setbuttonText("Available");
+        } else if (response.status === 401) {
+          alert("Unable to update");
+        }
+      });
+    }
   }
 
   return (

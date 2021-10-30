@@ -1,5 +1,7 @@
 const Vendor = require("../../../models/Vendor");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+
 const addVendor = async function (req, res) {
   const name = req.body.name;
   const email = req.body.email;
@@ -45,10 +47,9 @@ const addVendor = async function (req, res) {
 
 const login = async function (req, res) {
   const { phone, email, password } = req.body;
-  console.log(phone, email, password);
   try {
     if (phone) {
-      var user = await User.findOne({
+      var user = await Vendor.findOne({
         phone: phone,
       });
       if (!user) {
@@ -62,10 +63,14 @@ const login = async function (req, res) {
           message: "Incorrect Password !",
         });
       }
-      // await user.save();S
-      res.status(200).json({
-        message: "LoggedIn Successfully",
-      });
+      var accessToken = jwt.sign({ phone: phone , userId: user._id.toString()}, "accessTokenSecret", {expiresIn :"1 days"});
+        user.jwtToken = accessToken; 
+        await user.save();
+        res.status(200).json({
+          message: "LoggedIn Successfully",
+          accessToken: accessToken,
+          user
+      });   
     } else if (email) {
       var user = await Vendor.findOne({
         email: email,
@@ -81,10 +86,13 @@ const login = async function (req, res) {
           message: "Incorrect Password !",
         });
       }
-      // await user.save();
-      res.status(200).json({
+      var accessToken = jwt.sign({ email: email , userId: user._id.toString()}, "accessTokenSecret", {expiresIn :"1 days"});
+        user.jwtToken = accessToken; 
+        await user.save();
+        res.status(200).json({
         message: "LoggedIn Successfully",
-      });
+        accessToken: accessToken,
+      });   
     } else {
       res.status(500).json({
         message: "Incorrect Input",
@@ -98,7 +106,36 @@ const login = async function (req, res) {
   }
 };
 
+const check = async function(req, res)
+{
+  var userId;
+  if (req.headers && req.headers.authorization) {
+    var authorization = req.headers.authorization.split(" ")[1],
+      decoded;
+    try {
+      decoded = jwt.verify(authorization, "accessTokenSecret");
+    } catch (e) {
+      return res.status(401).send("unauthorized");
+    }
+    userId = decoded.userId;
+  } else {
+    return res.status(401).send("unauthorized");
+  }
+  let vendor;
+  vendor = await Vendor.findById(userId);
+  if(vendor!=null)
+  {
+    res.status(200).send("true");
+    return true;
+  }
+  else
+  {
+    res.status(401).send("false");
+    return false;
+  }
+};
 module.exports = {
   addVendor: addVendor,
   login: login,
+  check : check,
 };

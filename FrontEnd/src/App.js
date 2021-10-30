@@ -37,6 +37,7 @@ function App() {
           <Route path="/user-controls" component={UpdatePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/orders" component={OrdersPage} />
+          <Route path="/checkVendor" component={OrdersPage} />
           <Route path="/404" component={NoMatchPage} />
           <Redirect to="/404" />
         </Switch>
