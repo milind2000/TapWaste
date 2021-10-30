@@ -34,6 +34,10 @@ const addItem = async function (req, res) {
     }
     userId = decoded.userId;
   }
+  else
+  {
+    return res.status(401).send("unauthorized");
+  }
   const amount = req.body.amount;
   const acquired = req.body.acquired;
 
@@ -55,11 +59,7 @@ const addItem = async function (req, res) {
 };
 
 const showOrders = async function (_, res) {
-<<<<<<< HEAD
-  Item.find({
-=======
   await Item.find({
->>>>>>> be1fd68d8f46aa8f1265de7fa68def311b723b68
     acquired: false,
   })
     .populate("owner")
