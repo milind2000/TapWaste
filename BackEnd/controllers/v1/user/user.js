@@ -4,7 +4,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const register = async function (req, res) {
   const name = req.body.name;
-  const email = req.body.email;
+  let email = req.body.email;
+  email = email.toLowerCase();
   const address = req.body.address;
   const phone = req.body.phone;
   const zone = req.body.zone;
@@ -13,10 +14,13 @@ const register = async function (req, res) {
   //console.log(name, email, phone);
   try {
     let user = await User.findOne({
+      email: email,
+    });
+    let user1 = await User.findOne({
       phone: phone,
     });
-    if (user) {
-      return res.status(400).json({
+    if (user || user1) {
+      res.status(401).json({
         msg: "User Already Exists",
       });
     } else {
@@ -53,36 +57,10 @@ const register = async function (req, res) {
 };
 
 const login = async function (req, res) {
-  const { phone, email, password } = req.body;
+  let { email, password } = req.body;
+  email = email.toLowerCase();
   try {
-    if (phone) {
-      var user = await User.findOne({
-        phone: phone,
-      });
-      if (!user) {
-        return res.status(400).json({
-          message: "User Does Not Exist",
-        });
-      }
-      const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) {
-        return res.status(400).json({
-          message: "Incorrect Password !",
-        });
-      }
-      var accessToken = jwt.sign(
-        { phone: phone, userId: user._id.toString() },
-        "accessTokenSecret",
-        { expiresIn: "1 days" }
-      );
-      user.jwtToken = accessToken;
-      await user.save();
-      res.status(200).json({
-        message: "LoggedIn Successfully",
-        accessToken: accessToken,
-        user,
-      });
-    } else if (email) {
+    if (email) {
       var user = await User.findOne({
         email: email,
       });

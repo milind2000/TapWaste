@@ -113,7 +113,7 @@ class CartPage extends Component {
       return;
     }
     Axios.post(
-      "https://tapwaste.herokuapp.com/posts/addOrder",
+      "http://localhost:5000/posts/addOrder",
       {
         amount: this.state.estimatedPrice,
         acquired: false,

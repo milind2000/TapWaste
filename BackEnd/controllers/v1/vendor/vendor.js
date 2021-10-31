@@ -4,7 +4,8 @@ const jwt = require("jsonwebtoken");
 
 const addVendor = async function (req, res) {
   const name = req.body.name;
-  const email = req.body.email;
+  let email = req.body.email;
+  email = email.toLowerCase();
   const address = req.body.address;
   const phone = req.body.phone;
   const zone = req.body.zone;
@@ -13,11 +14,15 @@ const addVendor = async function (req, res) {
   //console.log(name, email, phone);
   try {
     let vendor = await Vendor.findOne({
+      email: email,
+    });
+    let vendor1 = await Vendor.findOne({
       phone: phone,
     });
-    if (vendor) {
-      return res.status(400).json({
-        msg: "User Already Exists",
+
+    if (vendor || vendor1) {
+      return res.status(401).json({
+        msg: "Vendor Already Exists",
       });
     } else {
       vendor = new Vendor({
@@ -52,36 +57,10 @@ const addVendor = async function (req, res) {
 };
 
 const login = async function (req, res) {
-  const { phone, email, password } = req.body;
+  let { email, password } = req.body;
+  email = email.toLowerCase();
   try {
-    if (phone) {
-      var user = await Vendor.findOne({
-        phone: phone,
-      });
-      if (!user) {
-        return res.status(400).json({
-          message: "User Does Not Exist",
-        });
-      }
-      const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch) {
-        return res.status(400).json({
-          message: "Incorrect Password !",
-        });
-      }
-      var accessToken = jwt.sign(
-        { phone: phone, userId: user._id.toString() },
-        "accessTokenSecret",
-        { expiresIn: "1 days" }
-      );
-      user.jwtToken = accessToken;
-      await user.save();
-      res.status(200).json({
-        message: "LoggedIn Successfully",
-        accessToken: accessToken,
-        user,
-      });
-    } else if (email) {
+    if (email) {
       var user = await Vendor.findOne({
         email: email,
       });
