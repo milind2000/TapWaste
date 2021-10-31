@@ -22,7 +22,7 @@ const RegisterVendorPage = () => {
       email: email,
       password: password,
     });
-    //console.log(send);
+    //console.log;
 
     const response = await fetch(
       "https://tapwaste.herokuapp.com/posts/vendor/signup",
