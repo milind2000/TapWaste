@@ -1,13 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import "../index.css";
 import "./NavigationBar.css";
-import { UserContext } from "../App";
 
 const NavigationBar = () => {
-  const { state, dispatch } = useContext(UserContext);
-  console.log(dispatch);
-  if (state) {
+  if (sessionStorage.getItem("usertype") === "VENDOR") {
     return (
       <Navbar bg="light" expand="lg" sticky="top">
         <Navbar.Brand href="/">Tap Waste</Navbar.Brand>

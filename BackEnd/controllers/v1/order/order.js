@@ -40,7 +40,7 @@ const addItem = async function (req, res) {
       });
     })
     .catch((err) => {
-      re.status(400).send(err);
+      res.status(400).send(err);
     });
 };
 

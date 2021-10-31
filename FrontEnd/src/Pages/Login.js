@@ -19,9 +19,10 @@ const LoginPage = () => {
     if (response.status === 200) {
       const res = await response.json();
       sessionStorage.setItem("btoken", res.accessToken);
-      // localStorage.setItem("btoken", res.accessToken);
+      sessionStorage.setItem("usertype", "USER");
       console.log("Login Successfull");
       history.push("/");
+      window.location.reload(false);
     } else {
       console.log(response);
       alert("Email or Password wrong!!");

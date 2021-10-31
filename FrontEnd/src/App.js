@@ -1,11 +1,11 @@
-import React, { useReducer, createContext } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
 } from "react-router-dom";
-import { initialState, reducer } from "../src/reducer/UseReducer";
+//import { initialState, reducer } from "../src/reducer/UseReducer";
 import NavigationBar from "./components/NavigationBar";
 
 //pages
@@ -18,7 +18,7 @@ import NoMatchPage from "./Pages/404";
 import RegisterVendorPage from "./Pages/RegisterVendor";
 import LoginVendorPage from "./Pages/LoginVendor";
 import OrdersPage from "./Pages/Orders";
-export const UserContext = createContext();
+//export const UserContext = createContext();
 
 const Routing = () => {
   return (
@@ -40,14 +40,12 @@ const Routing = () => {
 };
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  //const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>
-      <UserContext.Provider value={{ state, dispatch }}>
-        <NavigationBar />
-        <Routing />
-      </UserContext.Provider>
+      <NavigationBar />
+      <Routing />
     </>
   );
 }

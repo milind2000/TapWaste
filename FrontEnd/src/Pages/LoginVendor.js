@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import classes from "./Login.module.css";
 import { useHistory } from "react-router-dom";
-import { UserContext } from "../App";
+//import { UserContext } from "../App";
 
 const LoginVendorPage = () => {
-  const { state, dispatch } = useContext(UserContext);
+  //const { state, dispatch } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -20,12 +20,12 @@ const LoginVendorPage = () => {
     });
 
     if (response.status === 200) {
-      console.log(state);
-      dispatch({ type: "VENDOR", payload: true });
       const res = await response.json();
       sessionStorage.setItem("btoken", res.accessToken);
+      sessionStorage.setItem("usertype", "VENDOR");
       console.log("Login Vendor Successfull");
       history.push("/");
+      window.location.reload(false);
     } else {
       console.log(response);
       alert("Email or Password wrong!!");

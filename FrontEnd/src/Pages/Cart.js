@@ -121,14 +121,17 @@ class CartPage extends Component {
       {
         headers: { Authorization: `Bearer ${token}` },
       }
-    ).then((response) => {
-      // console.log(response);
-      if (response.status === 200) {
-        alert("Order Placed!!");
-      } else {
-        alert("Please Login to place an order!!");
-      }
-    });
+    )
+      .then((response) => {
+        if (response.status === 200) {
+          alert("Order Placed!!");
+        } else {
+          alert("Please Login to place an order!!");
+        }
+      })
+      .catch((err) => {
+        alert("Please Login as a User to place an order");
+      });
   };
 
   render() {
