@@ -10,7 +10,7 @@ const SocialCard = ({ userData }) => {
   function lockButtonClicked() {
     if (buttonText === "Available") {
       Axios.patch(
-        "http://localhost:5000/posts/updateOrders",
+        "https://tapwaste.herokuapp.com/posts/updateOrders",
         {
           id: userData._id,
           acquired: false,
@@ -33,7 +33,7 @@ const SocialCard = ({ userData }) => {
         });
     } else {
       Axios.patch(
-        "http://localhost:5000/posts/updateOrders",
+        "https://tapwaste.herokuapp.com/posts/updateOrders",
         {
           id: userData._id,
           acquired: true,
