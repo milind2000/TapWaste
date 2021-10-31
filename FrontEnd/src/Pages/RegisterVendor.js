@@ -22,7 +22,7 @@ const RegisterVendorPage = () => {
       email: email,
       password: password,
     });
-    //console.log(send);
+    //console.log;
 
     const response = await fetch(
       "https://tapwaste.herokuapp.com/posts/vendor/signup",
@@ -34,7 +34,9 @@ const RegisterVendorPage = () => {
     );
     if (response.status === 200) {
       // console.log("Registered Vendor Successfull");
-      history.push("/vendor/login");
+      history.push("/loginvendor");
+    } else if (response.status === 401) {
+      alert("Vendor already exists.");
     } else {
       //console.log(response);
       alert("Wrong Credentials!");

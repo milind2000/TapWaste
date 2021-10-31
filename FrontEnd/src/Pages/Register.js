@@ -36,6 +36,8 @@ const RegisterPage = () => {
     if (response.status === 200) {
       //console.log("Registered Successfull");
       history.push("/login");
+    } else if (response.status === 401) {
+      alert("User Already exists");
     } else {
       //console.log(response);
       alert("Wrong Credentials!!");
