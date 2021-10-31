@@ -11,7 +11,7 @@ const LoginPage = () => {
     event.preventDefault();
     const send = JSON.stringify({ email: email, password: password });
     //console.log(send);
-    const response = await fetch("http://localhost:5000/posts/login", {
+    const response = await fetch("https://tapwaste.herokuapp.com/posts/login", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: send,
