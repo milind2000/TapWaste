@@ -10,7 +10,7 @@ const register = async function (req, res) {
   const zone = req.body.zone;
   const pincode = req.body.pincode;
   const password = req.body.password;
-  console.log(name, email, phone);
+  //console.log(name, email, phone);
   try {
     let user = await User.findOne({
       phone: phone,
@@ -47,7 +47,7 @@ const register = async function (req, res) {
         });
     }
   } catch (err) {
-    console.log(err.message);
+    //console.log(err.message);
     res.status(500).send("Error in Saving");
   }
 };

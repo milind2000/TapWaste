@@ -10,7 +10,7 @@ const addVendor = async function (req, res) {
   const zone = req.body.zone;
   const password = req.body.password;
 
-  console.log(name, email, phone);
+  //console.log(name, email, phone);
   try {
     let vendor = await Vendor.findOne({
       phone: phone,
@@ -46,7 +46,7 @@ const addVendor = async function (req, res) {
         });
     }
   } catch (err) {
-    console.log(err.message);
+    //console.log(err.message);
     res.status(400).send("Error in Saving");
   }
 };
@@ -131,7 +131,7 @@ const check = async function (req, res) {
       return res.status(401).send("unauthorized vendor");
     }
     userId = decoded.userId;
-    console.log(userId);
+    //console.log(userId);
   } else {
     return res.status(401).send("unauthorized.Session expired");
   }

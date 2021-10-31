@@ -18,9 +18,9 @@ const SocialCard = ({ userData }) => {
         {}
       )
         .then((response) => {
-          console.log(response);
+          //console.log(response);
           if (response.status === 202) {
-            console.log("updteing");
+            //console.log("updteing");
             alert("Order Updated!!");
             setColor("success");
             setbuttonText("Acquired");
@@ -29,7 +29,7 @@ const SocialCard = ({ userData }) => {
           }
         })
         .catch((err) => {
-          console.log(err);
+          //console.log(err);
         });
     } else {
       Axios.patch(

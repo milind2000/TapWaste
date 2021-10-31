@@ -23,7 +23,7 @@ const RegisterPage = () => {
       email: email,
       password: password,
     });
-    console.log(send);
+    //console.log(send);
 
     const response = await fetch("http://localhost:5000/posts/signup", {
       method: "post",
@@ -31,10 +31,10 @@ const RegisterPage = () => {
       body: send,
     });
     if (response.status === 200) {
-      console.log("Registered Successfull");
+      //console.log("Registered Successfull");
       history.push("/login");
     } else {
-      console.log(response);
+      //console.log(response);
       alert("Wrong Credentials!!");
     }
   }

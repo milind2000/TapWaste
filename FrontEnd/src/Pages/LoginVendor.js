@@ -12,7 +12,7 @@ const LoginVendorPage = () => {
   async function handleSubmit(event) {
     event.preventDefault();
     const send = JSON.stringify({ email: email, password: password });
-    console.log(send);
+    //console.log(send);
     const response = await fetch("http://localhost:5000/posts/vendor/login", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -23,11 +23,11 @@ const LoginVendorPage = () => {
       const res = await response.json();
       sessionStorage.setItem("btoken", res.accessToken);
       sessionStorage.setItem("usertype", "VENDOR");
-      console.log("Login Vendor Successfull");
+      //console.log("Login Vendor Successfull");
       history.push("/");
       window.location.reload(false);
     } else {
-      console.log(response);
+      //console.log(response);
       alert("Email or Password wrong!!");
     }
   }

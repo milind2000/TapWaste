@@ -12,9 +12,9 @@ function OrdersPage() {
       try {
         const response = await fetch("http://localhost:5000/posts/orders");
         userData = await response.json();
-        console.log(userData.order);
+        //console.log(userData.order);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         userData = [];
       }
       setUsers(userData.order);

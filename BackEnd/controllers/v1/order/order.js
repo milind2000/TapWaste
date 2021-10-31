@@ -55,14 +55,14 @@ const showOrders = async function (_, res) {
       });
     })
     .catch((err) => {
-      console.log(err);
+      //console.log(err);
       res.status(401).json({ error: err });
     });
 };
 
 const updateOrders = async function (req, res) {
   const value = req.body.acquired;
-  console.log(req.body.id);
+  //console.log(req.body.id);
   Item.findByIdAndUpdate(
     req.body.id,
     {

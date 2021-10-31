@@ -22,7 +22,7 @@ const RegisterVendorPage = () => {
       email: email,
       password: password,
     });
-    console.log(send);
+    //console.log(send);
 
     const response = await fetch("http://localhost:5000/posts/vendor/signup", {
       method: "post",
@@ -30,10 +30,10 @@ const RegisterVendorPage = () => {
       body: send,
     });
     if (response.status === 200) {
-      console.log("Registered Vendor Successfull");
+      // console.log("Registered Vendor Successfull");
       history.push("/vendor/login");
     } else {
-      console.log(response);
+      //console.log(response);
       alert("Wrong Credentials!");
     }
   }
